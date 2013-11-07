@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>SampleStrut</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+   <servlet>
+    <description>  
+              
+            </description>
+    <display-name>BalanceAction</display-name>
+    <servlet-name>BalanceAction</servlet-name>
+    <servlet-class>  
+               net.kowthal.struts.helloworld.action.BalanceAction
+            </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BalanceAction</servlet-name>
+    <url-pattern>/BalanceAction</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+
+    <description>  
+              
+            </description>
+    <display-name>AdminRepAction</display-name>
+    <servlet-name>AdminRepAction</servlet-name>
+    <servlet-class>  
+               net.kowthal.struts.helloworld.action.AdminRepAction
+            </servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminRepAction</servlet-name>
+    <url-pattern>/AdminRepAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>/tIds/struts-html</taglib-uri>
+      <taglib-location>
+            /WEB-INF/tIds/struts-html.tld
+        </taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>/tIds/struts-bean</taglib-uri>
+      <taglib-location>
+            /WEB-INF/tIds/struts-bean.tld
+        </taglib-location>
+    </taglib>
+  </jsp-config>
+</web-app>

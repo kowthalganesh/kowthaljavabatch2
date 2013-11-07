@@ -1,0 +1,53 @@
+#para1
+{
+
+color:blue;
+background-color:#a2b3a1;
+text-align:right;
+position:relative;
+} 
+
+ul#list-nav {
+  list-style:none;
+  margin:20px 0px 0px 0px ;
+  padding:0;
+  width:1000px
+  align="right";
+}
+
+ul#list-nav li {
+  display:inline
+}
+
+ul#list-nav li a {
+  text-decoration:none;
+  padding:10px 0;
+  width:100px;
+  background:#FA5882;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+
+ul#list-nav li a:hover {
+  background:#a2b3a1;
+  color:#000
+}
+
+#news
+{
+margin 300px,0px,0px,0px;
+}  
+
+#accdetails
+{
+	background-image:url('img/welog.jpeg');
+	background-color:#cccccc;
+	margin:-180px 0px 0px 270px;
+}
+#menu
+{
+	background-color:#cccccc;
+	margin:0px 1000px 0px 0px;
+}

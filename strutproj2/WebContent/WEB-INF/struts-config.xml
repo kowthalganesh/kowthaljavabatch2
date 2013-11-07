@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+ 
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+	<form-beans>
+
+		<form-bean name="LoginForm" 		type="net.kowthal.struts.helloworld.form.LoginForm" />
+
+		<form-bean name="AdminForm" 		type="net.kowthal.struts.helloworld.form.AdminForm" />
+		
+		<form-bean name="RegForm" 			type="net.kowthal.struts.helloworld.form.RegForm" />
+
+		<form-bean name="FundForm" 			type="net.kowthal.struts.helloworld.form.FundForm" />
+			
+		<form-bean name="AdminRepForm"		type="net.kowthal.struts.helloworld.form.AdminRepForm" />
+
+        <form-bean name="UserForm"			type="net.kowthal.struts.helloworld.form.UserForm"/>
+    
+	</form-beans>
+
+
+
+	<global-exceptions>
+	</global-exceptions>
+	<global-forwards>
+	</global-forwards>
+
+	<action-mappings>
+		<action path="/login" name="LoginForm" validate="true" input="/index.jsp"
+			type="net.kowthal.struts.helloworld.action.LoginAction">
+			<forward name="success" path="/welcome.jsp" />
+			<forward name="failure" path="/index.jsp" />
+			<forward name="regi" path="/reg.jsp" />
+		</action>
+		<action path="/alogin" name="AdminForm" validate="true"
+			input="/adminlog.jsp" type="net.kowthal.struts.helloworld.action.AdminAction">
+			<forward name="success" path="/awelc.jsp" />
+			<forward name="failure" path="/adminlog.jsp" />
+		</action>
+
+		<action path="/reglogin" name="RegForm" validate="true" input="/reglog.jsp"
+			type="net.kowthal.struts.helloworld.action.RegAction">
+			<forward name="success" path="/index.jsp" />
+			<forward name="failure" path="/reglog.jsp" />
+		</action>
+
+		<action path="/fundlogin" name="FundForm" validate="true"
+			input="/fund.jsp" type="net.kowthal.struts.helloworld.action.FundAction">
+			<forward name="success" path="/welcome.jsp" />
+			<forward name="failure" path="/fund.jsp" />
+		</action>
+		
+		<action input="/" name="UserForm" path="/userAction"
+            scope="session" type="net.kowthal.struts.helloworld.action.UserAction">
+            <forward name="success" path="/awelc.jsp" />
+        </action>
+		
+	</action-mappings>
+
+	<message-resources parameter="/com/ofs/resource/ApplicationResource" />
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames" value="/WEB-INF/validation.xml" />
+	</plug-in>
+</struts-config>
