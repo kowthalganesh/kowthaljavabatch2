@@ -7,15 +7,14 @@
  
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Login page</title>
-     </head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Login page</title>
+    </head>
     
 <body>
 
  <html:form action="login">
     <table border="1">
-   
    
    <tr><td>UserName</td><td><html:text property="userName"></html:text></td>
    <td><html:errors property="userName" /></td> </tr>

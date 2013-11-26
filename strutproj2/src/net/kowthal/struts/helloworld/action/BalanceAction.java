@@ -31,6 +31,7 @@ public class BalanceAction extends HttpServlet {
 	DBConnect dbcon;
 	Connection con;
     LoginForm act;
+    
     /*private final static String SUCCESS = "success";*/
      
     protected void doPost(HttpServletRequest request,  
@@ -44,8 +45,9 @@ public class BalanceAction extends HttpServlet {
         try {
 			con = dbcon.connection();
 			/*System.out.println("bef query");*/
-			
-			pst = con.prepareStatement("select kowthalregistration.username,kowthalregistration.firstname,kowthalregistration.mobile,kowthalregistration.email,kowthalregistration.accno,kowthalregistration.custid,kowthalregistration.regdate,acctable.acctype,acctable.jointacc,acctable.balance,acctable.branch from kowthalregistration,acctable where kowthalregistration.accno=acctable.accno and kowthalregistration.username='kowthal'");
+			HttpSession session = request.getSession(true);
+			act=(LoginForm) session.getAttribute("currentSession");
+			pst = con.prepareStatement("select kowthalregistration.username,kowthalregistration.firstname,kowthalregistration.mobile,kowthalregistration.email,kowthalregistration.accno,kowthalregistration.custid,kowthalregistration.regdate,acctable.acctype,acctable.jointacc,acctable.balance,acctable.branch from kowthalregistration,acctable where kowthalregistration.accno=acctable.accno and kowthalregistration.username='"+act.getUserName()+"'");
 			rs = pst.executeQuery();
 	
 			while(rs.next()) {
